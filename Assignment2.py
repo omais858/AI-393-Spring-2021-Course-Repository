@@ -6,7 +6,7 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set()
 
-# Import libraries for machine learning
+
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.naive_bayes import MultinomialNB
@@ -30,9 +30,6 @@ y = trainingData["label"]
 
 
 def describeDataset(input):
-    """
-    This function describes the shape of the dataset.  
-    """
     
     print('')
     print("'X' shape: %s."%(X.shape,))
