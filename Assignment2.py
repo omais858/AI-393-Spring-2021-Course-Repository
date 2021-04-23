@@ -145,3 +145,41 @@ def selectParametersForSVM(a, b, c, d):
     return
 
 selectParametersForSVM(X_train, Y_train, X_test, Y_test);
+
+
+def executeKNN(a,b,c,d):
+    classifier = KNeighborsClassifier()
+    classifier.fit(a, b)
+    kfold = model_selection.KFold(n_splits=10, random_state=7)
+    accuracy = model_selection.cross_val_score(classifier, c, d, cv=kfold, scoring='accuracy')
+    mean = accuracy.mean() 
+    stdev = accuracy.std()
+    print('SKlearn K-Nearest Neighbor Classifier - Training set accuracy: {:.2f} ({:.2f})'.format(mean*100, stdev))
+    print('')
+
+
+executeKNN(X_train, Y_train, X_test, Y_test)
+
+def selectParametersForKNN(a, b, c, d):
+
+    model = KNeighborsClassifier()
+   
+    model.fit(a, b)
+    print('Selected Parameters for KNN:')
+    print('')
+    print(model)
+    print('')
+    predictions = model.predict(c)
+    print('K-Nearest Neighbors - Training set accuracy: %s' % accuracy_score(d, predictions))
+    kfold = model_selection.KFold(n_splits=10, random_state=7)
+    accuracy = model_selection.cross_val_score(model, c, d, cv=kfold, scoring='accuracy')
+    mean = accuracy.mean() 
+    stdev = accuracy.std()
+    print('K-Nearest Neighbors Classifier - { (mean : %s) : (std : %s) }' % (mean, stdev))
+    print('')
+    print('')
+    return
+
+
+
+selectParametersForKNN(X_train, Y_train, X_test, Y_test);
