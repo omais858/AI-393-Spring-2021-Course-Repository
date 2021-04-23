@@ -112,3 +112,36 @@ def selectParametersForNB(a, b, c, d):
     print('')
     return
 selectParametersForNB(X_train, Y_train, X_test, Y_test);
+
+def executeSVC(a,b,c,d):
+    classifier = SVC()
+    classifier.fit(a, b)
+    kfold = model_selection.KFold(n_splits=10, random_state=7)
+    accuracy = model_selection.cross_val_score(classifier, c, d, cv=kfold, scoring='accuracy')
+    mean = accuracy.mean() 
+    stdev = accuracy.std()
+    print('SKlearn Support Vector Machine - Training set accuracy: {:.2f} ({:.2f})'.format(mean*100, stdev))
+    print('')
+
+executeSVC(X_train, Y_train, X_test, Y_test)
+
+def selectParametersForSVM(a, b, c, d):
+
+    model = SVC()
+    model.fit(a, b)
+    print('Selected Parameters for SVM:')
+    print('')
+    print(model)
+    print('')
+    predictions = model.predict(c)
+    print('Linear Support Vector Machine - Training set accuracy: %s' % accuracy_score(d, predictions))
+    kfold = model_selection.KFold(n_splits=10, random_state=7)
+    accuracy = model_selection.cross_val_score(model, c, d, cv=kfold, scoring='accuracy')
+    mean = accuracy.mean() 
+    stdev = accuracy.std()
+    print('Linear Support Vector Machine - { (mean : %s) : (std : %s) }' % (mean, stdev))
+    print('')
+    print('')
+    return
+
+selectParametersForSVM(X_train, Y_train, X_test, Y_test);
