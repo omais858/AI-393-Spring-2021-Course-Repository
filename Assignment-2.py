@@ -77,4 +77,5 @@ print(f"Accuracy: {round(metrics.accuracy_score(y_test, mnb_GS_pred)*100, 2)}%")
 mnb_GS.best_params_
 
 mnb_report = classification_report(y_true = y_test, y_pred = mnb_GS_pred)
+print(mnb_report)
 
