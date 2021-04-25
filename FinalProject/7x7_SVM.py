@@ -43,13 +43,13 @@ filter = np.array([
 
 X = X.to_numpy()
 
-#new array with reduced number of features to store the small size images
+
 sX = np.empty((0,484), int)
 
-# img = X[6]
+
 ss = 42000 #subset size for dry runs change to 42000 to run on whole data
 
-#Perform convolve on all images
+
 for img in X[0:ss,:]:
   img2D = np.reshape(img, (28,28))
   nImg = convolve2D(img2D,filter)
@@ -67,8 +67,7 @@ sXTrain, sXTest, yTrain, yTest = train_test_split(sX,sY,test_size=0.2,random_sta
 print(sXTest.shape,", ",yTest.shape)
 print(sXTrain.shape,", ",yTrain.shape)
 print('\n') 
-# SVM-Support Vector Machine Algorithm - Supervised Machine Technique
-# Linear SVM
+
 svcClassifier = SVC(kernel='linear')
 # Fit the data
 svcClassifier.fit(sXTrain, yTrain)
