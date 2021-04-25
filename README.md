@@ -20,8 +20,15 @@ The supervised learning algorithm Linear Regression is a machine learning algori
 
 
 ### SVM
+SVMs are supervised machine learning algorithms that can be used for both classification and regression. They are, however, most commonly used in classification issues. In comparison to other machine learning algorithms, SVMs have a unique way of implementation. Because of their ability to handle multiple continuous and categorical variables, they have become extremely popular in recent years.
 
 ### Convulation
+SVMs are supervised machine learning algorithms that can be used for both classification and regression. They are, however, most commonly used in classification issues. In comparison to other machine learning algorithms, SVMs have a unique way of implementation. Because of their ability to handle multiple continuous and categorical variables, they have become extremely popular in recent years.
+
+### Refrences We Find Useful 
+https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html
+https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
+https://scikit-learn.org/stable/modules/svm.html
 
 
 
