@@ -48,10 +48,8 @@ filter = np.array([
 
 X = X.to_numpy()
 
-#new array with reduced number of features to store the small size images
 sX = np.empty((0,400), int)
 
-# img = X[6]
 ss = 42000 #subset size for dry runs change to 42000 to run on whole data
 
 #Perform convolve on all images
