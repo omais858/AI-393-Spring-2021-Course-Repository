@@ -49,22 +49,17 @@ filter = np.array([
 
 X = X.to_numpy()
 
-#new array with reduced number of features to store the small size images
 sX = np.empty((0,400), int)
 
-# img = X[6]
+
 ss = 42000 #subset size for dry runs change to 42000 to run on whole data
 
-#Perform convolve on all images
+
 for img in X[0:ss,:]:
   img2D = np.reshape(img, (28,28))
-  # print(img2D.shape)
-  # print(img2D)
   nImg = convolve2D(img2D,filter)
-  # print(nImg.shape)
-  # print(nImg)
+
   nImg1D = np.reshape(nImg, (-1,400))
-  # print(nImg.shape)
   sX = np.append(sX, nImg1D, axis=0)
 
 Y = Y.to_numpy()
