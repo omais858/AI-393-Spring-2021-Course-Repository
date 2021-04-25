@@ -62,3 +62,20 @@ mnb.fit(X_train, y_train)
 mnb_pred = mnb.predict(X_test)
 
 print(f"Accuracy: {round(metrics.accuracy_score(y_test, mnb_pred)*100, 2)}%")
+
+param_grid = {'alpha': [0.00001, 0.0001, 0.001, 0.01, 0.1, 0.5, 1.0, 10.0],
+              'fit_prior': [True,False]}
+
+mnb_GS = GridSearchCV(mnb, param_grid, cv=5, verbose=2, n_jobs=1)
+
+mnb_GS.fit(X_train, y_train)
+
+mnb_GS_pred = mnb_GS.predict(X_test)
+
+print(f"Accuracy: {round(metrics.accuracy_score(y_test, mnb_GS_pred)*100, 2)}%")
+
+mnb_GS.best_params_
+
+mnb_report = classification_report(y_true = y_test, y_pred = mnb_GS_pred)
+
+print(mnb_report)
