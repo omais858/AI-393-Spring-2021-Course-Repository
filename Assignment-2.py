@@ -40,6 +40,17 @@ plt.hist(train['label'], bins=20, alpha=0.7, color='#603c8e')
 plt.xlabel('Digits')
 plt.ylabel('Frequency')
 plt.grid(axis='y', alpha=0.5)
+
+target_names = list("0123456789")
+mnb_report_2 = classification_report(y_true = y_test, y_pred = mnb_GS_pred
+                                     , target_names=target_names, output_dict=True)
+plt.figure(figsize=(10,10))
+heat = sns.heatmap(pd.DataFrame(mnb_report_2).iloc[:-1, :].T, annot=True, xticklabels=True, yticklabels=True)
+plt.title('Classification Report for NBC')
+plt.show()
+
+
+f1_score(y_test, mnb_pred, average='weighted')
 plt.show()
 
 X_train, X_test, y_train, y_test = train_test_split(train[train.columns[1:785]], train[train.columns[0]]
