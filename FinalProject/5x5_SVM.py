@@ -5,7 +5,6 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from google.colab import files
 
-#function to perform convolution
 def convolve2D(image, filter):
   fX, fY = filter.shape
   fNby2 = (fX//2)
@@ -39,13 +38,12 @@ filter = np.array([
 
 X = X.to_numpy()
 
-#new array with reduced number of features to store the small size images
 sX = np.empty((0,576), int)
 
-# img = X[6]
+
 ss = 42000 #subset size for dry runs change to 42000 to run on whole data
 
-#Perform convolve on all images
+
 for img in X[0:ss,:]:
   img2D = np.reshape(img, (28,28))
   nImg = convolve2D(img2D,filter)
@@ -58,13 +56,9 @@ sY = Y[0:ss]
 print(sY.shape)
 print(sX.shape)
 
-# train and test model
 sXTrain, sXTest, yTrain, yTest = train_test_split(sX,sY,test_size=0.2,random_state=0)
 print(sXTest.shape,", ",yTest.shape)
 print(sXTrain.shape,", ",yTrain.shape)
-print('\n') 
-# SVM-Support Vector Machine Algorithm - Supervised Machine Technique
-# Linear SVM
 svcClassifier = SVC(kernel='linear')
 # Fit the data
 svcClassifier.fit(sXTrain, yTrain)
