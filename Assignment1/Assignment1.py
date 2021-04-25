@@ -78,3 +78,16 @@ mnb.fit(X_train, y_train)
 mnb_pred = mnb.predict(X_test)
 
 print(f"Accuracy: {round(metrics.accuracy_score(y_test, mnb_pred)*100, 2)}%")
+
+target_names = list("0123456789")
+mnb_report_2 = classification_report(y_true = y_test, y_pred = mnb_GS_pred
+                                     , target_names=target_names, output_dict=True)
+plt.figure(figsize=(10,10))
+heat = sns.heatmap(pd.DataFrame(mnb_report_2).iloc[:-1, :].T, annot=True, xticklabels=True, yticklabels=True)
+plt.title('Classification Report for NBC')
+plt.show()
+
+
+f1_score(y_test, mnb_pred, average='weighted')
+
+
