@@ -16,7 +16,7 @@ This repository contains assignments and projects submitted to the Artificial In
 ## Introduction:
 The goal of the following assignment is to correctly identify handwritten digits. The dataset used is the famous handwritten dataset available on Kaggle.
 
-## Approch:
+## Appraoch:
 1. Multinomial Naive Bayes
 2. Libraries(matplotlib.plt, multinomialNB, os, numpy, train_test_split, classification_report, metrics)
 3. Cross Validation
