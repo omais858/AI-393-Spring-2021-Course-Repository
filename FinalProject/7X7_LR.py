@@ -85,5 +85,4 @@ print(f'Score For LinearRegression: {LinearRegression.score(sXTest, yTest)}')
 predictedClasses = LinearRegression.predict(sXTest)
 submissions=pd.DataFrame({"ImageId": list(range(1,len(predictedClasses)+1)), "Label": predictedClasses})
 submissions.to_csv("submission.csv", index = False, header = True)
-from google.colab import files
 files.download('submission.csv')
