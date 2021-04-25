@@ -10,3 +10,13 @@ Stdudent ID | Name
 
 ## Description 
 This repository contains assignments and projects submitted to the Artificial Intelligence course offered in Spring 2021 at PafKiet.
+
+## AI Assignment
+
+# Introduction
+The goal of the following assignment is to correctly identify handwritten digits. The dataset used is the famous handwritten dataset available on Kaggle.
+
+# Approch
+1. Multinomial Naive Bayes
+2. Libraries(matplotlib.plt, multinomialNB, os, numpy, train_test_split, classification_report, metrics)
+
