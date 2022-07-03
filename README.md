@@ -23,7 +23,7 @@ The supervised learning algorithm Linear Regression is a machine learning algori
 SVMs are supervised machine learning algorithms that can be used for both classification and regression. They are, however, most commonly used in classification issues. In comparison to other machine learning algorithms, SVMs have a unique way of implementation. Because of their ability to handle multiple continuous and categorical variables, they have become extremely popular in recent years.
 
 ### Convulation
-The most common type of artificial neutral network is convolution, which is used to process pixel data in image recognition and processing. The layer of 2D convolution employs convolution. The term "conv2D" is commonly used to refer to it. It has a tiny kernel that slides along those two dimensions, essentially a window of pixel values. The RGB channel is obtained from beginning to end, first channel to last channel, rather than as a small depth window. We used it to create clearer images so that we could clearly recognise the digits.
+The most common type of artificial neutral network is convolution, which is used to process pixel data in image recognition and processing. The layer of 2D convolution employs convolution. The term "conv2D" is commonly used to refer to it. It has a tiny kernel that slides along those two dimensions, essentially a window of pixel values. The RGB channel is obtained from beginning to end, first channel to last channel, rather than as a small depth window. We used it to create clearer images so that we could clearly recognise the digits..
 
 ### Refrences We Find Useful 
 1. https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html
